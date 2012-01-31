@@ -1,0 +1,15 @@
+#header-wrapper {
+  background-color: #1C1C3E;
+}
+
+#header-wrapper .container {
+/*  background: url(sites/all/themes/oilfield/site-name.png); */
+  background: url(../site-name.png);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+#logo {
+  float: right;
+}
+
