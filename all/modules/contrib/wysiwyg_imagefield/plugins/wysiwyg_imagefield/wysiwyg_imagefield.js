@@ -32,6 +32,7 @@
         title: Drupal.settings.WysiwygImageField.title
       });
       Drupal.wysiwygImageField.init();
+      Drupal.wysiwygImageField.focus();
       return content;
     },
 

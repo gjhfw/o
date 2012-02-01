@@ -67,7 +67,7 @@ function wysiwyg_imagefield_form_submit(&$form, &$form_state) {
 function wysiwyg_imagefield_form_validate(&$form, &$form_state) {
   // Insert is required on a Wysiwyg ImageField field.
   if ($form_state['values']['instance']['wysiwyg_imagefield'] && !$form_state['values']['instance']['widget']['settings']['insert']) {
-    form_set_error('wysiwyg_imagefield', t('Insert is required to use this field with Wysiwyg ImageField.'));
+    //form_set_error('wysiwyg_imagefield', t('Insert is required to use this field with Wysiwyg ImageField.'));
   }
 
   // Image number of values must be set to 'Unlimited'.
