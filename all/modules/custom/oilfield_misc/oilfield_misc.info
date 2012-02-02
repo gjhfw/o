@@ -1,0 +1,6 @@
+; $Id
+name = Oilfield Misc
+description = Miscellaneous customisations for Oilfield International website
+core = 7.x
+project = "Custom"
+files[] = "oilfield_misc.module"

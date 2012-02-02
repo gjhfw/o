@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @File
+ * Miscellaneous customisations for Oilfield international website.
+ */
+
+
+/**
+ * Implement hook_node_view().
+ */
+function oilfield_misc_node_view( $node, $build_mode ) {
+
+  if ( $node &&
+      user_access( 'View published content' ) &&
+      $build_mode == 'full' ) {
+
+    $markup = _oilfield_misc_related_content( $node );
+
+    if ( $markup ) {
+      $node->content['oilfield-related'] = array( '#markup' => $markup );
+    }
+  }
+}
+
+
+/**
+ * Generate markup (by embedding view) for content realted to current node.
+ *
+ * @param $node
+ *   Node object as passed to hook_node_view.
+ *
+ * @return
+ *   
+ */
+function _oilfield_misc_related_content( $node ) {
+  //dsm( $node );
+
+  $view_markup =
+    views_embed_view( 'related_case_studies', 'default', $node->nid );
+  $is_view_empty = strpos( $view_markup, 'views-field' ) === FALSE;
+
+  //dsm( $markup );
+
+  if ( $is_view_empty ) {
+    return NULL;
+  }
+  else {
+
+    // Wrapping output in a "field" div so that we benefit from standard CSS.
+    $result = '<div class="field">';
+
+    // Does the node NOT already contain a related content section?
+    if ( empty( $node->field_related_content ) ) {
+
+      // Add title for our "field".
+      $result .=
+        '<h2 class="field-label">' . t('Related material') . ':</h2></div>';
+    }
+  }
+
+  $result .= $view_markup . '</div>';
+  return $result;
+}
