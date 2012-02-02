@@ -18,7 +18,8 @@ function oilfield_misc_node_view( $node, $build_mode ) {
     $markup = _oilfield_misc_related_content( $node );
 
     if ( $markup ) {
-      $node->content['oilfield-related'] = array( '#markup' => $markup );
+      $node->content['oilfield-related'] = array(
+        '#markup' => $markup, '#weight' => 10 );
     }
   }
 }
