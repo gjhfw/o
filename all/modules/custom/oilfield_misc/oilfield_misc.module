@@ -56,7 +56,7 @@ function _oilfield_misc_related_content( $node ) {
 
       // Add title for our "field".
       $result .=
-        '<h2 class="field-label">' . t('Related material') . ':</h2></div>';
+        '<h2 class="field-label">' . t('Related material') . ':</h2>';
     }
   }
 
