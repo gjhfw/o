@@ -7,6 +7,7 @@
  * settings (just the backgrounds will be 100%).
  *
  * To use copy this to your subtheme and rename it page.tpl.php
+ Hello this is John
  */
 ?>
 <div id="page-wrapper"><div id="page">
