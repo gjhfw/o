@@ -7,39 +7,45 @@
  * settings (just the backgrounds will be 100%).
  *
  * To use copy this to your subtheme and rename it page.tpl.php
- Hello this is John
  */
 ?>
-<div id="page-wrapper"><div id="page">
+<div id="page-wrapper">
+	<div id="page">
 
-  <?php if($page['leaderboard']): ?>
-    <div id="leaderboard-wrapper"><div class="container clearfix">
-      <?php print render($page['leaderboard']); ?>
-    </div></div>
-  <?php endif; ?>
+  		<?php if($page['leaderboard']): ?>
+    	<div id="leaderboard-wrapper">
+    		<div class="container clearfix">
+      			<?php print render($page['leaderboard']); ?>
+    		</div><!-- /.container .clearfix -->
+    	</div><!-- /#leaderboard-wrapper -->
+  		<?php endif; ?>
 
-  <div id="header-wrapper"><div class="container clearfix">
-    <header class="clearfix">
+  		<div id="header-wrapper">
+  			<div class="container clearfix">
+    			<header class="clearfix">
 
-      <?php if ($linked_site_logo): ?>
-        <div id="logo"><?php print $linked_site_logo; ?></div>
-      <?php endif; ?>
+      			<?php if ($linked_site_logo): ?>
+        			<div id="logo">
+        				<?php print $linked_site_logo; ?>
+        			</div><!-- /#logo -->
+      			<?php endif; ?>
 
-      <?php if ($site_name || $site_slogan): ?>
-        <hgroup<?php if (!$site_slogan && $hide_site_name): ?> class="<?php print $visibility; ?>"<?php endif; ?>>
-          <?php if ($site_name): ?>
-            <h1 id="site-name"<?php if ($hide_site_name): ?> class="<?php print $visibility; ?>"<?php endif; ?>><?php print $site_name; ?></h1>
-          <?php endif; ?>
-          <?php if ($site_slogan): ?>
-            <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
-          <?php endif; ?>
-        </hgroup>
-      <?php endif; ?>
+      			<?php if ($site_name || $site_slogan): ?>
+        			<hgroup<?php if (!$site_slogan && $hide_site_name): ?> class="<?php print $visibility; ?>"<?php endif; ?>>
+          			<?php if ($site_name): ?>
+            			<h1 id="site-name"<?php if ($hide_site_name): ?> class="<?php print $visibility; ?>"<?php endif; ?>><?php print $site_name; ?></h1>
+          			<?php endif; ?>
+          			<?php if ($site_slogan): ?>
+            			<h2 id="site-slogan"><?php print $site_slogan; ?></h2>
+          			<?php endif; ?>
+        			</hgroup><!-- /hgroup -->
+     			 <?php endif; ?>
 
-      <?php print render($page['header']); ?>
+     			 <?php print render($page['header']); ?>
 
-    </header>
-  </div></div>
+    			</header><!-- /header -->
+  			</div><!-- /.container .clearfix -->
+  		</div><!-- /#header-wrapper -->
 
   <?php if ($page['menu_bar'] || $primary_navigation || $secondary_navigation): ?>
     <div id="nav-wrapper"><div class="container clearfix">
