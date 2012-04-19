@@ -6,3 +6,5 @@ default/files
 *.zip
 *.gz
 *.bz2
+
+.DS_Store
